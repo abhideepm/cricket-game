@@ -1,0 +1,20 @@
+{
+	"name": "cricket",
+	"version": "1.0.0",
+	"description": "Cricket game",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --mode development"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"ts-loader": "^8.0.1",
+		"typescript": "^3.9.7",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"dependencies": {
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.12"
+	}
+}
