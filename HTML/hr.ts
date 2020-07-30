@@ -1,1 +1,1 @@
-export const hr = <HTMLHRElement>document.createElement('hr')
+export const hr = (): HTMLHRElement => document.createElement('hr')

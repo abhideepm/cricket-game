@@ -2,6 +2,8 @@ import { title } from './HTML/title'
 import { hr } from './HTML/hr'
 import { score } from './HTML/score'
 import { team } from './classes/team'
+import { timer } from './HTML/timer'
+import { gridTable } from './HTML/scoreGrid'
 
 const team1 = new team('Team 1')
 const team2 = new team('Team 2')
@@ -9,6 +11,33 @@ const team2 = new team('Team 2')
 const container = <HTMLElement>document.getElementById('container')
 
 container.appendChild(title)
-container.appendChild(hr)
-container.appendChild(score(team1.name, team1.totalScore))
-container.appendChild(score(team2.name, team2.totalScore))
+container.appendChild(hr())
+
+const scoreboard = <HTMLDivElement>document.createElement('div')
+scoreboard.classList.add('d-flex', 'justify-content-between')
+scoreboard.appendChild(score(team1.name, team1.totalScore))
+scoreboard.appendChild(timer)
+scoreboard.appendChild(score(team2.name, team2.totalScore))
+container.appendChild(scoreboard)
+
+container.appendChild(hr())
+
+const gameState = <HTMLDivElement>document.createElement('div')
+gameState.classList.add(
+	'container',
+	'd-flex',
+	'justify-content-around',
+	'p-0',
+	'm-0'
+)
+container.appendChild(gameState)
+
+const team1State = <HTMLDivElement>document.createElement('div')
+team1State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
+team1State.appendChild(gridTable(team1))
+gameState.appendChild(team1State)
+
+const team2State = <HTMLDivElement>document.createElement('div')
+team2State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
+team2State.appendChild(gridTable(team2))
+gameState.appendChild(team2State)
