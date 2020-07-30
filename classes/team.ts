@@ -3,6 +3,7 @@ import { player } from './player'
 export class team {
 	players: player[]
 	name: string
+	totalScore: number = 0
 	constructor(name: string) {
 		let temp: player[] = []
 		for (let i = 1; i <= 10; i++) {
