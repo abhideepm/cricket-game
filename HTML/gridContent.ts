@@ -15,9 +15,7 @@ export const playerRow = (player: player): HTMLTableRowElement => {
 	}
 
 	const total = <HTMLTableDataCellElement>document.createElement('td')
-	let sum = 0
-	player.runs.map(run => (run !== -1 ? (sum += run) : null))
-	total.innerHTML = sum !== 0 ? sum.toString() : ''
+	total.innerHTML = player.total.toString()
 	row.appendChild(total)
 
 	return row

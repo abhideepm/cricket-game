@@ -15,9 +15,9 @@ container.appendChild(hr())
 
 const scoreboard = <HTMLDivElement>document.createElement('div')
 scoreboard.classList.add('d-flex', 'justify-content-between')
-scoreboard.appendChild(score(team1.name, team1.totalScore))
+scoreboard.appendChild(score(team1))
 scoreboard.appendChild(timer)
-scoreboard.appendChild(score(team2.name, team2.totalScore))
+scoreboard.appendChild(score(team2))
 container.appendChild(scoreboard)
 
 container.appendChild(hr())
@@ -30,14 +30,17 @@ gameState.classList.add(
 	'p-0',
 	'm-0'
 )
+gameState.id = 'gameState'
 container.appendChild(gameState)
 
 const team1State = <HTMLDivElement>document.createElement('div')
 team1State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
+team1State.id = 'team1'
 team1State.appendChild(gridTable(team1))
 gameState.appendChild(team1State)
 
 const team2State = <HTMLDivElement>document.createElement('div')
 team2State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
+team2State.id = 'team2'
 team2State.appendChild(gridTable(team2))
 gameState.appendChild(team2State)

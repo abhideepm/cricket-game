@@ -2,6 +2,7 @@ export class player {
 	runs: number[]
 	name: string
 	total: number = 0
+	currentBall: number = 0
 	constructor(name: string) {
 		let temp: number[] = []
 
@@ -9,5 +10,9 @@ export class player {
 
 		this.runs = temp
 		this.name = name
+	}
+	assignPlayerRun = (runs: number): void => {
+		this.runs[this.currentBall] = runs
+		this.currentBall++
 	}
 }

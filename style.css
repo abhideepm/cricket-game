@@ -3,3 +3,7 @@
 body {
 	font-family: 'Oswald', sans-serif;
 }
+
+.table {
+	border: black solid 1px !important;
+}
