@@ -1,4 +1,5 @@
 import { player } from './player'
+import { timer } from '../HTML/resetTimer'
 
 export class team {
 	players: player[]
@@ -25,7 +26,6 @@ export class team {
 			this.generateTotalScore()
 			this.playerIndex++
 		} else {
-			console.log(this.name)
 			const btn = <HTMLButtonElement>document.getElementById(this.name)
 			btn.disabled = true
 			if (this.name === 'Team 1') {
