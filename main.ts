@@ -40,7 +40,7 @@ team1State.id = 'team1'
 team1State.appendChild(gridTable(team1))
 gameState.appendChild(team1State)
 
-gameState.appendChild(gameInfo)
+gameState.appendChild(gameInfo(team1, team2))
 
 const team2State = <HTMLDivElement>document.createElement('div')
 team2State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')

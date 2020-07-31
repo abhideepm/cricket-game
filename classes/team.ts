@@ -26,11 +26,14 @@ export class team {
 			this.playerIndex++
 		} else {
 			console.log(this.name)
+			const btn = <HTMLButtonElement>document.getElementById(this.name)
+			btn.disabled = true
 			if (this.name === 'Team 1') {
-				const btn1 = <HTMLButtonElement>document.getElementById(this.name)
-				btn1.disabled = true
 				const btn2 = <HTMLButtonElement>document.getElementById('Team 2')
 				btn2.disabled = false
+			} else {
+				const genResBtn = <HTMLButtonElement>document.getElementById('genBtn')
+				genResBtn.disabled = false
 			}
 		}
 	}
