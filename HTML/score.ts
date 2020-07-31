@@ -18,6 +18,7 @@ export const score = (team: team): HTMLDivElement => {
 	playButton.addEventListener('click', () => {
 		const randomNumber = Math.floor(Math.random() * 7)
 		team.assignRuns(randomNumber)
+		team.generateTotalScore()
 		let teamState: HTMLElement
 		if (team.name === 'Team 1') {
 			teamState = <HTMLElement>document.getElementById('team1')!
@@ -26,6 +27,7 @@ export const score = (team: team): HTMLDivElement => {
 		}
 		teamState.innerHTML = ''
 		teamState.appendChild(gridTable(team))
+		scoreVal.innerHTML = team.totalScore.toString()
 	})
 	scoreboard.appendChild(playButton)
 

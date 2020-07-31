@@ -14,9 +14,17 @@ export class team {
 		this.name = name
 	}
 	nextPlayer = (): void => {
-		this.playerIndex++
+		this.generateTotalScore()
+		if (this.playerIndex !== 10) this.playerIndex++
 	}
 	assignRuns = (runs: number): void => {
-		this.players[this.playerIndex].assignPlayerRun(runs)
+		const presentPlayer: player = this.players[this.playerIndex]
+		if (runs === 0 || presentPlayer.currentBall === 5) this.nextPlayer()
+
+		presentPlayer.assignPlayerRun(runs)
+		presentPlayer.updateTotal()
+	}
+	generateTotalScore = (): void => {
+		this.totalScore = this.players.reduce((acc, curr) => acc + curr.total, 0)
 	}
 }

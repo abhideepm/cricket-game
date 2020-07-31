@@ -15,4 +15,10 @@ export class player {
 		this.runs[this.currentBall] = runs
 		this.currentBall++
 	}
+	updateTotal = (): void => {
+		console.log(this.runs)
+		this.total = this.runs
+			.filter(run => run !== -1)
+			.reduce((acc, curr) => acc + curr, 0)
+	}
 }
