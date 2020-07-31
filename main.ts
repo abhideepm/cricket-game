@@ -2,9 +2,9 @@ import { title } from './HTML/title'
 import { hr } from './HTML/hr'
 import { score } from './HTML/score'
 import { team } from './classes/team'
-import { timer } from './HTML/timer'
 import { gridTable } from './HTML/scoreGrid'
 import { gameInfo } from './HTML/gameInfo'
+import { startTimer } from './HTML/timer'
 
 const team1 = new team('Team 1')
 const team2 = new team('Team 2')
@@ -17,7 +17,7 @@ container.appendChild(hr())
 const scoreboard = <HTMLDivElement>document.createElement('div')
 scoreboard.classList.add('d-flex', 'justify-content-between')
 scoreboard.appendChild(score(team1))
-scoreboard.appendChild(timer)
+scoreboard.appendChild(startTimer())
 scoreboard.appendChild(score(team2))
 container.appendChild(scoreboard)
 
