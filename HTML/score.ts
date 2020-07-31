@@ -13,6 +13,8 @@ export const score = (team: team): HTMLDivElement => {
 	scoreboard.appendChild(scoreVal)
 
 	const playButton = <HTMLButtonElement>document.createElement('button')
+	playButton.disabled = true
+	playButton.id = team.name
 	playButton.innerHTML = 'Play!'
 	playButton.classList.add('btn', 'btn-primary')
 	playButton.addEventListener('click', () => {

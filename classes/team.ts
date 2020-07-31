@@ -13,16 +13,26 @@ export class team {
 		this.players = temp
 		this.name = name
 	}
-	nextPlayer = (): void => {
-		this.generateTotalScore()
-		if (this.playerIndex !== 10) this.playerIndex++
-	}
 	assignRuns = (runs: number): void => {
 		const presentPlayer: player = this.players[this.playerIndex]
 		if (runs === 0 || presentPlayer.currentBall === 5) this.nextPlayer()
 
 		presentPlayer.assignPlayerRun(runs)
 		presentPlayer.updateTotal()
+	}
+	nextPlayer = (): void => {
+		if (this.playerIndex < 9) {
+			this.generateTotalScore()
+			this.playerIndex++
+		} else {
+			console.log(this.name)
+			if (this.name === 'Team 1') {
+				const btn1 = <HTMLButtonElement>document.getElementById(this.name)
+				btn1.disabled = true
+				const btn2 = <HTMLButtonElement>document.getElementById('Team 2')
+				btn2.disabled = false
+			}
+		}
 	}
 	generateTotalScore = (): void => {
 		this.totalScore = this.players.reduce((acc, curr) => acc + curr.total, 0)

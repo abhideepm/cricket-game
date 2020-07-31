@@ -4,6 +4,7 @@ import { score } from './HTML/score'
 import { team } from './classes/team'
 import { timer } from './HTML/timer'
 import { gridTable } from './HTML/scoreGrid'
+import { gameInfo } from './HTML/gameInfo'
 
 const team1 = new team('Team 1')
 const team2 = new team('Team 2')
@@ -38,6 +39,8 @@ team1State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
 team1State.id = 'team1'
 team1State.appendChild(gridTable(team1))
 gameState.appendChild(team1State)
+
+gameState.appendChild(gameInfo)
 
 const team2State = <HTMLDivElement>document.createElement('div')
 team2State.classList.add('col-lg-4', 'col-sm-12', 'col-md-12')
