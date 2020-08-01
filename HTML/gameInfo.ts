@@ -1,6 +1,6 @@
 import { team } from '../classes/team'
 import { generateResultTemplate } from './generateResultTemplate'
-import { timer } from './resetTimer'
+import { resetTimer } from './resetTimer'
 
 export const gameInfo = (team1: team, team2: team): HTMLDivElement => {
 	const wrapper = <HTMLDivElement>document.createElement('div')
@@ -13,7 +13,7 @@ export const gameInfo = (team1: team, team2: team): HTMLDivElement => {
 		startGame.disabled = true
 		const team1btn = <HTMLButtonElement>document.getElementById('Team 1')
 		team1btn.disabled = false
-		timer()
+		resetTimer(60)
 	})
 	wrapper.appendChild(startGame)
 

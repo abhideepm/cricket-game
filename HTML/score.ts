@@ -15,7 +15,7 @@ export const score = (team: team): HTMLDivElement => {
 	const playButton = <HTMLButtonElement>document.createElement('button')
 	playButton.disabled = true
 	playButton.id = team.name
-	playButton.innerHTML = 'Play!'
+	playButton.innerHTML = 'Hit!'
 	playButton.classList.add('btn', 'btn-primary')
 	playButton.addEventListener('click', () => {
 		const randomNumber = Math.floor(Math.random() * 7)
