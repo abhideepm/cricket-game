@@ -26,7 +26,6 @@ export class team {
 			this.generateTotalScore()
 			this.playerIndex++
 		} else {
-			resetTimer(60)
 			const btn = <HTMLButtonElement>document.getElementById(this.name)
 			btn.disabled = true
 			if (this.name === 'Team 1') {

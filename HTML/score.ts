@@ -3,6 +3,7 @@ import { gridTable } from './scoreGrid'
 
 export const score = (team: team): HTMLDivElement => {
 	const scoreboard = <HTMLDivElement>document.createElement('div')
+	scoreboard.classList.add('col-lg-4', 'col-md-12', 'col-sm-12')
 
 	const scoreHeader = <HTMLHeadingElement>document.createElement('h1')
 	scoreHeader.innerHTML = `${team.name.toUpperCase()} SCORE`
